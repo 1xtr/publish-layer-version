@@ -1,0 +1,50 @@
+{
+  "name": "@1xtr/publish-layer-version",
+  "version": "1.0.0",
+  "description": "GitHub Action AWS Lambda layer publish",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "patch": "npm version patch",
+    "minor": "npm version minor"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1xtr/publish-layer-version.git"
+  },
+  "keywords": [],
+  "author": "Aleksei Anisimov <i@trendco.dev>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/1xtr/publish-layer-version/issues"
+  },
+  "homepage": "https://github.com/1xtr/publish-layer-version#readme",
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": true,
+    "endOfLine": "lf",
+    "printWidth": 100,
+    "tabWidth": 2
+  },
+  "eslintIgnore": [
+    "build",
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.2",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@aws-sdk/client-lambda": "^3.254.0"
+  }
+}
