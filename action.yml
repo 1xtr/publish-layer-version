@@ -1,0 +1,25 @@
+name: "Publish AWS Lambda layer"
+author: 'Aleksei Anisimov <i@trendco.dev>'
+description: "GitHub Action to publish AWS Lambda layers"
+
+inputs:
+  zip_file:
+    description: 'Path to zip file of layer'
+    required: true
+  layer_name:
+    description: 'Layer name'
+    required: true
+  layer_desc:
+    description: 'Layer description'
+  arch:
+    description: 'Layer Compatible Architectures ("x86_64","arm64").'
+  runtime:
+    description: 'The identifier of the function runtime ("nodejs18.x","nodejs16.x").'
+
+runs:
+  using: 'node16'
+  main: 'index.js'
+
+branding:
+  icon: 'layers'
+  color: 'orange'
