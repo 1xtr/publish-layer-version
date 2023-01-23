@@ -1,10 +1,11 @@
-import { getInput, info as logInfo, setFailed } from "@actions/core";
-import { LambdaClient, PublishLayerVersionCommand } from "@aws-sdk/client-lambda";
-import { readFileSync } from "fs";
+const { getInput, info: logInfo, setFailed } = require("@actions/core");
+const { LambdaClient, PublishLayerVersionCommand } = require("@aws-sdk/client-lambda");
+const { readFileSync } = require("fs");
 
 /**
  * @typedef {import("@aws-sdk/client-lambda").LambdaClient} LambdaClient
  * @typedef {import("@aws-sdk/client-lambda").LambdaClientConfig} LambdaClientConfig
+ * @typedef {import("@aws-sdk/client-lambda").PublishLayerVersionCommand} PublishLayerVersionCommand
  * @typedef {import("@aws-sdk/client-lambda").PublishLayerVersionCommandInput} PublishLayerVersionCommandInput
  * @typedef {import("@aws-sdk/client-lambda").PublishLayerVersionCommandOutput} PublishLayerVersionCommandOutput
  */

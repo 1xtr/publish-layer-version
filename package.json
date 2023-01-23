@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "GitHub Action AWS Lambda layer publish",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "patch": "npm version patch",

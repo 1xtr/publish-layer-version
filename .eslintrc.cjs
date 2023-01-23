@@ -7,12 +7,11 @@ module.exports = {
   "parser": "@typescript-eslint/parser",
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
     "airbnb-base",
     "prettier",
   ],
   "plugins": [
-    "prettier", "@typescript-eslint",
+    "prettier",
   ],
   "rules": {
     "no-console": "off",
