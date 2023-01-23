@@ -14,12 +14,23 @@ const { readFileSync } = require("fs");
  * @type {LambdaClient}
  */
 let client;
+const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+
+if (!accessKeyId) {
+  setFailed("AWS_ACCESS_KEY_ID not set in environment");
+}
+
+if (!secretAccessKey) {
+  setFailed("AWS_SECRET_ACCESS_KEY not set in environment");
+}
+
 try {
   /**
    * @type {LambdaClientConfig}
    */
   const clientConfig = {
-    region: process.env.AWS_REGION,
+    region: process.env.AWS_REGION || "us-east-1",
     maxAttempts: 2,
     credentials: {
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -76,7 +87,7 @@ async function publish() {
      */
     const response = await client.send(command);
 
-    if (response && response['$metadata'].httpStatusCode < 300) {
+    if (response && response["$metadata"].httpStatusCode < 300) {
       logInfo("New layer version published successfully");
       logInfo(`Layer version ARN: ${response.LayerVersionArn}, Version: ${response.Version}`);
     }
