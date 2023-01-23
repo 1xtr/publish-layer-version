@@ -76,7 +76,7 @@ async function publish() {
      */
     const response = await client.send(command);
 
-    if (response && response.$metadata.httpStatusCode === 200) {
+    if (response && response['$metadata'].httpStatusCode < 300) {
       logInfo("New layer version published successfully");
       logInfo(`Layer version ARN: ${response.LayerVersionArn}, Version: ${response.Version}`);
     }
