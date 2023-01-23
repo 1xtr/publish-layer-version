@@ -85,4 +85,4 @@ async function publish() {
   }
 }
 
-await publish();
+publish();
