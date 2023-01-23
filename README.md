@@ -7,11 +7,11 @@ In first, you need to set secrets for you project
 ---
 ### Environments
 
-`aws_access_key_id` AWS ACCESS KEY
+`AWS_ACCESS_KEY_ID` - aws access key
 
-`aws_secret_access_key` AWS SECRET KEY.
+`AWS_SECRET_ACCESS_KEY` - aws secret key.
 
-`aws_region` AWS Region. Default `us-east-1`.
+`AWS_REGION` aws region. Default `us-east-1`.
 
 ---
 ### Required Inputs
