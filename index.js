@@ -69,16 +69,20 @@ try {
   setFailed(e);
 }
 
-try {
-  /**
-   * @type {PublishLayerVersionCommandOutput}
-   */
-  const response = await client.send(command);
+async function publish() {
+  try {
+    /**
+     * @type {PublishLayerVersionCommandOutput}
+     */
+    const response = await client.send(command);
 
-  if (response && response.$metadata.httpStatusCode === 200) {
-    logInfo("New layer version published successfully");
-    logInfo(`Layer version ARN: ${response.LayerVersionArn}, Version: ${response.Version}`);
+    if (response && response.$metadata.httpStatusCode === 200) {
+      logInfo("New layer version published successfully");
+      logInfo(`Layer version ARN: ${response.LayerVersionArn}, Version: ${response.Version}`);
+    }
+  } catch (e) {
+    setFailed(e);
   }
-} catch (e) {
-  setFailed(e);
 }
+
+await publish();
